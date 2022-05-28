@@ -1,0 +1,55 @@
+<!-- AWAL COUNTDOWN 5-->
+<div class="fitur oke">
+<div class="headline">
+<h2 class="tebal">Fitur Count Down 5 </h2>
+<div id="countdowntimer5">
+<span id="countdown5">loading...</span>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+// set the date we're counting down to
+var target_date = new Date("2020/12/30 17:53:00").getTime();
+// variables for time units
+var days, hours, minutes, seconds;
+// get tag element
+var countdown5 = document.getElementById("countdown5");
+// update the tag with id "countdown" every 1 second
+setInterval(function () {
+// find the amount of "seconds" between now and target
+var current_date = new Date().getTime();
+var seconds_left = (target_date - current_date) / 1000;
+var t = target_date - current_date; 
+// do some time calculations
+days = parseInt(seconds_left / 86400);
+seconds_left = seconds_left % 86400;
+hours = parseInt(seconds_left / 3600);
+seconds_left = seconds_left % 3600;
+minutes = parseInt(seconds_left / 60);
+seconds = parseInt(seconds_left % 60);
+// format countdown string + set tag value
+  countdown5.innerHTML = '' +
+                            '<div class="time5"><span>'+ days +'</span><br/>hari </div>' +
+                            '<div class="time5"><span>'+ hours +'</span><br/>jam </div>' +
+                            '<div class="time5"><span>'+ minutes +'</span><br/>menit </div>' +
+                            '<div class="time5"><span>'+ seconds +'</span><br/>detik </div>';
+if (t < 0) { 
+clearInterval(x); 
+document.getElementById("countdown5").innerHTML = "WAKTU DISCOUNT HABIS"; 
+    } 
+}, 1000);
+//]]>
+</script>
+
+<style scoped="scoped" type="text/css">
+#countdowntimer5 {color:#2167c7;font-family:Roboto, 
+Sans-serif;text-transform:uppercase;text-align:center;font-weight:bolder;font-size: 2em}
+.time5 {display: inline-block;font-size: 16px;margin: 40px 5px 5px 5px;color: #2167c7;padding:10px;}
+.time5 span {font-size: 6em;background: rgba(255, 255, 255, 0);color: #2167c7;border:2px solid #2167c7; border-radius: 5px;padding: 0 10px 20px 10px;}
+@media (max-width:700px) {
+.time5 {font-size: 12px;margin: 20px 3px 8px 3px;padding:0;}
+.time5 span {font-size: 3.5em;padding: 0 8px;}}
+</style>
+<!-- AKHIR COUNTDOWN 5-->

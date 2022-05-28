@@ -1,0 +1,7 @@
+<div class='back-to-top'><a href='#' id='back-to-top' title='back to top'> <i class='fa fa-chevron-up'/> </i></a></div>
+<style>
+#back-to-top{background:#2196F3;opacity:0.6;color:#ffffff;padding:7px 9px;font-size:20px;border-radius:4px;transition:all 1s ease 50ms;}
+.back-to-top{position:fixed!important;position:absolute;bottom:90px;right:10px;z-index:99999;}
+#back-to-top:hover {opacity:1;transition:all 1s ease 50ms;}
+</style>
+<script> $(window).scroll(function() { if($(this).scrollTop() > 300) { $('#back-to-top').fadeIn(); } else { $('#back-to-top').fadeOut(); } }); $('#back-to-top').hide().click(function() { $('html, body').animate({scrollTop:0}, 1000); return false; }); </script>

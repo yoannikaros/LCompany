@@ -1,0 +1,28 @@
+<div id='popupbox'>
+<a class='close-popup' href='#'>&#215;</a>
+<div class='black-bg kaluar'></div>
+<div class='gambar-space'>
+<a href='#' target='_blank'><img alt='popup image' src='https://4.bp.blogspot.com/-Glii6V9UA04/Wo74g6xGvWI/AAAAAAAAACs/yqyj8HGmTA8lsTK6UZo3ev2zNa0x_Hn-gCLcBGAs/s1600/display2.png'/></a>
+</div>
+</div>
+
+<style type='text/css'>
+@media (max-width:800px){#popupbox{padding:0 10px}}
+#popupbox{position:fixed!important;position:absolute;top:-700px;left:39%;margin:0 0 0 -182px;font:normal Dosis,Georgia,Serif;color:#333;-webkit-box-shadow:0 0 10px #333;-moz-box-shadow:0 0 10px #333;box-shadow:0 0 10px #333;background:#fff;z-index:99999;}
+#popupbox a.close-popup{position:absolute;top:-25px;right:0;font:25px Arial,Sans-Serif;text-decoration:none;text-align:center;color:#f2f2f2;cursor:pointer}
+#popupbox a.close-popup:hover{color:#fff}
+#popupbox a.close-popup:active{opacity:0}
+#popupbox div.black-bg{background:#000 url( ) no-repeat center;position:fixed;top:0;left:0;width:100%;height:100%;opacity:.6;z-index:-500}
+#popupbox div.gambar-space{border:5px solid #fff;position:relative;background:#fff;border-bottom:0}
+#popupbox div.gambar-space img{width:600px;}
+</style>
+
+<script type='text/javascript'>
+$(window).bind("load", function() {
+$('#popupbox').animate({top:"100px"}, 2000);
+$('a.close-popup, .kaluar').click(function() {
+$(this).parent().fadeOut(500);
+return false;
+});
+});
+</script>

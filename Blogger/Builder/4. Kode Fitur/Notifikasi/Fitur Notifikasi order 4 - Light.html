@@ -1,0 +1,156 @@
+<div class='orderNotif'></div>
+<script type='text/javascript'>
+//<![CDATA[
+var dataOrder = {
+    "Buyer anda 1": {
+        "avaURL": "https://4.bp.blogspot.com/-6j-ukwLbTbY/W4bFUcxV1MI/AAAAAAAABCc/tLrdu_ZVIQoEE_LvpU6Jr50RNqz_YOWpgCLcBGAs/s1600/avatar.png",
+        "template": "Blogspot Landing Page Template",
+        "templateURL": "https://www.blogspotlandingpage.com/",
+    },
+    "Buyer anda 2": {
+        "avaURL": "https://4.bp.blogspot.com/-6j-ukwLbTbY/W4bFUcxV1MI/AAAAAAAABCc/tLrdu_ZVIQoEE_LvpU6Jr50RNqz_YOWpgCLcBGAs/s1600/avatar.png",
+        "template": "Blogspot Landing Page Template",
+        "templateURL": "https://www.blogspotlandingpage.com/",
+    },
+    "Buyer anda 3": {
+        "avaURL": "https://4.bp.blogspot.com/-6j-ukwLbTbY/W4bFUcxV1MI/AAAAAAAABCc/tLrdu_ZVIQoEE_LvpU6Jr50RNqz_YOWpgCLcBGAs/s1600/avatar.png",
+        "template": "Blogspot Landing Page Template",
+        "templateURL": "https://www.blogspotlandingpage.com/",
+    },
+    "Buyer anda 4": {
+        "avaURL": "https://4.bp.blogspot.com/-6j-ukwLbTbY/W4bFUcxV1MI/AAAAAAAABCc/tLrdu_ZVIQoEE_LvpU6Jr50RNqz_YOWpgCLcBGAs/s1600/avatar.png",
+        "template": "Blogspot Landing Page Template",
+        "templateURL": "https://www.blogspotlandingpage.com/",
+    },
+    "Buyer anda 5": {
+        "avaURL": "https://4.bp.blogspot.com/-6j-ukwLbTbY/W4bFUcxV1MI/AAAAAAAABCc/tLrdu_ZVIQoEE_LvpU6Jr50RNqz_YOWpgCLcBGAs/s1600/avatar.png",
+        "template": "Blogspot Landing Page Template",
+        "templateURL": "https://www.blogspotlandingpage.com/",
+    },
+    "Buyer anda 6": {
+        "avaURL": "https://4.bp.blogspot.com/-6j-ukwLbTbY/W4bFUcxV1MI/AAAAAAAABCc/tLrdu_ZVIQoEE_LvpU6Jr50RNqz_YOWpgCLcBGAs/s1600/avatar.png",
+        "template": "Blogspot Landing Page Template",
+        "templateURL": "https://www.blogspotlandingpage.com/",
+    },
+};
+$(window).bind('load', function() {
+    $.each(dataOrder, function(key, value) {
+        var ifAvaURL = 'https://4.bp.blogspot.com/-6j-ukwLbTbY/W4bFUcxV1MI/AAAAAAAABCc/tLrdu_ZVIQoEE_LvpU6Jr50RNqz_YOWpgCLcBGAs/s1600/avatar.png';
+        if (value.avaURL != '') {
+            ifAvaURL = value.avaURL;
+        }
+        $('\
+<div class="item" datetime="' + value.time + '">\
+<span class="avaURL" style="background-image:url(' + ifAvaURL + ');"></span>\
+<p><a class="closeOrderNotif" href="javascript:void(0);"><i class="fas fa-times"></i></a></p>\
+<span class="infoOrder">\
+<b>' + key + '</b> telah membeli <a href="' + value.templateURL + '" target="_blank">' + value.template + '</a>\
+    </span>\
+    </div>\
+').appendTo('.orderNotif');
+    });
+    $(".orderNotif > .item:gt(0)").removeClass('active');
+    setInterval(function() {
+        $('.orderNotif > .item:first').removeClass('active')
+        setTimeout(function() {
+            $('.orderNotif > .item:first').next().addClass('active').end().appendTo('.orderNotif');
+        }, 4000);
+    }, 8000);
+});
+$(document).on('click', '.orderNotif .closeOrderNotif', function() {
+    $(this).parents('.item').addClass('hidden');
+});
+//]]>
+</script>
+
+<style type='text/css'>
+      .orderNotif {
+      }
+      .orderNotif .item {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 10000;
+        max-width: 300px;
+        font-size: 12px;
+        background: rgba(255,255,255,.95);
+        padding: 8px 10px;
+        border-radius: 0;
+        box-shadow: 0 10px 20px rgba(1,1,0,.3);
+        color: #888;
+        transition: .4s;
+        opacity: 0;
+        visibility: hidden;
+        line-height: 1.4em;
+      }
+      .orderNotif .item:hover {
+        background: #fff;
+      }
+      .orderNotif .item span.avaURL {
+        background: #fafafa;
+        background-size: cover;
+        display: block;
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 0;
+        line-height: 1em;
+        float: left;
+        margin-bottom: 0;
+      }
+      .orderNotif .item.active {
+        left: 20px;
+        bottom: 20px;
+        opacity: 1;
+        visibility: visible;
+      }
+      .orderNotif .item.hidden {
+        left: -40px!important;
+        opacity: 0!important;
+        visibility: hidden!important;
+      }
+      @media only screen and (max-width: 1068px) {
+        .orderNotif .item.active {
+          bottom: 15px;
+          left: 15px;
+          max-width: 290px;
+        }
+      }
+      .orderNotif .item i {
+        display: inline-block;
+        vertical-align: middle;
+        color: #4285F4;
+      }
+      .orderNotif .item p{
+        display: inline-block;
+        float: right;
+        margin-top: -15px;
+        margin-right: -25px;
+        border-top: 0;
+        border-right: 0;
+        overflow: hidden;
+        margin-left: 10px;
+        margin-bottom: 10px;
+  		line-height: 1;
+      }
+      .orderNotif .item p a {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 5px 10px;
+        border: .5px solid #eee;
+        border-radius: 0 0 0 6px;
+        border-top: 0;
+        border-right: 0;
+      }
+      .orderNotif .item p a:active {
+        background: #fafafa;
+      }
+      .orderNotif .item p a i {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 100%;
+        margin: 5px;
+        padding: 10px 20px 0 0;
+        color: #4E5665;
+      }
+</style>

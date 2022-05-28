@@ -1,0 +1,84 @@
+<!-- AWAL COUNTDOWN-->
+<script type='text/javascript'>
+        $(document).ready(function() {$(&#39;img#closed&#39;).click(function(){$(&#39;#btm_banner&#39;).hide(90);});});
+</script>
+<div id='floating' style='width:100%;margin:auto; text-align:center;float:none;overflow:hidden; display:scroll;position:fixed; bottom:0;z-index:9999'>
+<div><a id='close-floating' onclick='document.getElementById(&apos;floating&apos;).style.display = &apos;none&apos;;' style='cursor:pointer;'><img alt='close' src='https://3.bp.blogspot.com/-ZZSacDHLWlM/VhvlKTMjbLI/AAAAAAAAF2M/UDzU4rrvcaI/s1600/btn_close.gif' title='close button'/></a></div>
+<div style='text-align:center;display:block;max-width:100%;height:auto;overflow:hidden;margin:auto'>
+<div class="oke latar-putih">
+<div class="konten">
+<div class="kol2 latar-putih">
+<div class="headline">
+<div class="judulmelayang">
+<span class="judulmelayang tebal">Diskon 50RB "ORDERNOW"</span>
+</div>
+<div id="countdowtimermelayang">
+<span id="countdownmelayang">loading...</span>
+</div>
+</div>
+</div>
+<div class="kol2 latar-putih">
+<div class="tengah">
+<a class="latar-hijautua melengkung putih orderwa" href="#">ORDER SEKARANG</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+// set the date we're counting down to
+var target_date = new Date("2020/10/17 23:59:59").getTime();
+// variables for time units
+var days, hours, minutes, seconds;
+// get tag element
+var countdownmelayang = document.getElementById("countdownmelayang");
+// update the tag with id "countdownmelayang" every 1 second
+setInterval(function () {
+// find the amount of "seconds" between now and target
+var current_date = new Date().getTime();
+var seconds_left = (target_date - current_date) / 1000;
+var t = target_date - current_date; 
+// do some time calculations
+days = parseInt(seconds_left / 86400);
+seconds_left = seconds_left % 86400;
+hours = parseInt(seconds_left / 3600);
+seconds_left = seconds_left % 3600;
+minutes = parseInt(seconds_left / 60);
+seconds = parseInt(seconds_left % 60);
+// format countdown string + set tag value
+  countdownmelayang.innerHTML = '' +'<div class="waktumelayang"><span>'+ days +'</span><br/>hari </div>' +
+                            '<div class="waktumelayang"><span>'+ hours +'</span><br/>jam </div>' +
+                            '<div class="waktumelayang"><span>'+ minutes +'</span><br/>menit </div>' +
+                            '<div class="waktumelayang"><span>'+ seconds +'</span><br/>detik </div>';
+if (t < 0) { 
+clearInterval(x); 
+document.getElementById("countdownmelayang").innerHTML = "WAKTU HABIS"; 
+    } 
+}, 1000);
+//]]>
+</script>
+
+<style scoped="scoped" type="text/css">
+#countdowtimermelayang {font-family:Roboto, Sans-serif;text-transform:uppercase;text-align:center;font-size: 2em}
+.waktumelayang {display: inline-block;font-size: 10px;margin: 2px 5px;position: relative;background: #2167c7;color: #fff;padding: 6px 15px;border-radius: 4px;line-height:1em;width:20%}
+.waktumelayang span {font-size: 2em;font-weight:bolder;}
+.timermelayang{position: fixed;left: 0;right: 0;bottom: 0;z-index: 9999;}
+.orderwa{font-size:24px;line-height:1.4em;font-weight:bolder;text-transform:uppercase;cursor: pointer;display:inline-block;padding:15px 30px;margin-top:10px;font-family:Roboto, Sans-serif;width:95%}
+.judulmelayang {font-size:18px;font-weight:bolder;text-transform:uppercase;font-family:Roboto, Sans-serif;padding-top:8px}
+#countdownmelayang{font-size: 16px;}
+@media (max-width:690px) {
+.waktumelayang {font-size: 9px;margin:0 2px;padding: 5px 3px;}
+.waktumelayang span {font-size: 2em;}
+.orderwa{font-size:18px;padding:10px 10px;margin-top:15px;}
+.judulmelayang {font-size:14px;}}
+@media (max-width:480px) {
+.waktumelayang {font-size: 9px;margin:0 2px;padding: 4px 3px;}
+.waktumelayang span {font-size: 1.7em;}
+.orderwa{font-size:15px;padding:10px 5px;margin-top:6px;}
+.judulmelayang {font-size:12px;padding-top:4px;line-height:1.2em}
+}
+</style>
+<!-- AKHIR COUNTDOWN-->

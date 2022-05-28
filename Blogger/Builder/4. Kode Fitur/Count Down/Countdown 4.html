@@ -1,0 +1,55 @@
+<!-- AWAL COUNTDOWN 4 -->
+<div class="fitur oke latar-biru">
+<div class="headline">
+<h2 class="tebal">Fitur Count Down 4 </h2>
+<div id="countdowtimer4">
+<span id="countdown4">loading...</span>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+// set the date we're counting down to
+var target_date = new Date("2020/12/30 17:53:00").getTime();
+// variables for time units
+var days, hours, minutes, seconds;
+// get tag element
+var countdown4 = document.getElementById("countdown4");
+// update the tag with id "countdown" every 1 second
+setInterval(function () {
+// find the amount of "seconds" between now and target
+var current_date = new Date().getTime();
+var seconds_left = (target_date - current_date) / 1000;
+var t = target_date - current_date; 
+// do some time calculations
+days = parseInt(seconds_left / 86400);
+seconds_left = seconds_left % 86400;
+hours = parseInt(seconds_left / 3600);
+seconds_left = seconds_left % 3600;
+minutes = parseInt(seconds_left / 60);
+seconds = parseInt(seconds_left % 60);
+// format countdown string + set tag value
+  countdown4.innerHTML = '' +
+                            '<div class="time4"><span>'+ days +'</span><br/>hari </div>' +
+                            '<div class="time4"><span>'+ hours +'</span><br/>jam </div>' +
+                            '<div class="time4"><span>'+ minutes +'</span><br/>menit </div>' +
+                            '<div class="time4"><span>'+ seconds +'</span><br/>detik </div>';
+if (t < 0) { 
+clearInterval(x); 
+document.getElementById("countdown4").innerHTML = "WAKTU DISCOUNT HABIS"; 
+    } 
+}, 1000);
+//]]>
+</script>
+
+<style scoped="scoped" type="text/css">
+#countdowtimer4 {color:white;font-family:Roboto, 
+Sans-serif;text-transform:uppercase;text-align:center;font-weight:bolder;font-size: 2em}
+.time4 {display: inline-block;font-size: 16px;margin: 10px;position: relative;background: rgba(1, 1, 1, 0);color: #fff;padding: 50px 15px 20px 15px;border-radius: 50%;min-width:150px;border:4px solid white}
+.time4 span {font-size: 4.5em;}
+@media (max-width:700px) {
+.time4 {font-size: 12px;margin:3px;padding: 8px 5px;min-width:75px;border:2px solid white}
+.time4 span {font-size: 2.5em;}}
+</style>
+<!-- AKHIR COUNTDOWN 4-->

@@ -1,0 +1,217 @@
+<a class='fa fa-whatsapp fa-3x animated infinite rubberBand' href='javascript:void(0);' id='whatsappchat-icon' onclick='openModal()'></a>
+<div class='tombolchat' id='tombolchat'>
+</div>
+<div id='whatsappchat'>
+<span class='whatsappchat-x' onclick='closeModal()'></span>
+<p class='whatsappchat-title bg-gradien-linear'>Hubungi Saya Via WhatsApp</p>
+<div class='whatsappchat-body'>
+<input class='tujuan' type='hidden' value='082328785284'/>
+<!-- No. WhatsApp -->
+<input class='nama whatsappchat-input setengah' placeholder='Nama Anda..' type='text'/>
+<input class='email whatsappchat-input setengah' placeholder='Alamat E-mail..' type='email'/>
+<textarea class='pesan whatsappchat-input full' placeholder='Pesan..'></textarea>
+<a class='submit'><i class='fa fa-whatsapp'></i> Chat Sekarang</a>
+</div>
+</div>
+
+<script type='text/javascript'>
+function closeModal() {
+document.getElementById('tombolchat').classList.remove('active')
+document.getElementById('whatsappchat').classList.remove('active')
+}
+function openModal() {
+document.getElementById('tombolchat').classList.add('active')
+document.getElementById('whatsappchat').classList.add('active')
+}
+// Onclick Whatsapp Sent!
+$('#whatsappchat .submit').click(whatsappchat);
+var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+function whatsappchat() {
+    var ph = '';
+    if ($('#whatsappchat .nama').val() == '') { // Cek Nama
+        ph = $('#whatsappchat .nama').attr('placeholder');
+        alert('Silahkan tulis ' + ph);
+        $('#whatsappchat .nama').focus();
+        return false;
+    } else if ($('#whatsappchat .email').val() == '') { // Cek Email
+        ph = $('#whatsappchat .email').attr('placeholder');
+        alert('Silahkan tulis ' + ph);
+        $('#whatsappchat .email').focus();
+        return false;
+    } else if (reg.test($('#whatsappchat .email').val()) == false) { // Cek Validasi Email
+        alert('Alamat E-mail tidak valid.');
+        $('#whatsappchat .email').focus();
+         return false;
+    } else if ($('#whatsappchat .pesan').val() == '') { // Cek Pesan
+        ph = $('#whatsappchat .pesan').attr('placeholder');
+        alert('Silahkan tulis ' + ph);
+        $('#whatsappchat .pesan').focus();
+        return false;
+    } else {
+        if (!confirm("Sudah menginstall WhatsApp?")) {
+            window.open("https://www.whatsapp.com/download/");
+        } else {
+            // Check Device (Mobile/Desktop)
+            var url_wa = 'https://web.whatsapp.com/send';
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                url_wa = 'whatsapp://send/';
+            }
+            // Get Value
+            var tujuan = $('#whatsappchat .tujuan').val(),
+                    via_url = location.href,
+                    nama = $('#whatsappchat .nama').val(),
+                    email = $('#whatsappchat .email').val(),
+                    pesan = $('#whatsappchat .pesan').val();
+            $(this).attr('href', url_wa + '?phone=62 ' + tujuan + '&text=Halo Mas Arif,%0A' + pesan + '%0A%0ASalam,%0A*' + nama + '* %0A' + email + '%0Avia ' + via_url);
+            var w = 960,
+                    h = 540,
+                    left = Number((screen.width / 2) - (w / 2)),
+                    tops = Number((screen.height / 2) - (h / 2)),
+                    popupWindow = window.open(this.href, '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=1, copyhistory=no, width=' + w + ', height=' + h + ', top=' + tops + ', left=' + left);
+            popupWindow.focus();
+            return false;
+        }
+    }
+}
+</script>
+
+<style>
+div#tombolchat {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: -99;
+opacity: 0;
+transition:.5s;
+background: rgba(0,0,0,0.5);
+}
+div#tombolchat.active{
+z-index: 9999;
+opacity: 1;
+}
+div#whatsappchat {
+position: fixed;
+top: 50%;
+left: 50%;
+max-width: 480px;
+width: 95%;
+background: #fff;
+transform: translate(-50%,-50%);
+z-index: -1;
+opacity: 0;
+border-radius: 5px;
+overflow: hidden;
+box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+transition:.5s;
+}
+div#whatsappchat.active {
+z-index: 999999;
+opacity: 1;
+}
+p.whatsappchat-title {
+margin: 0;
+padding: 15px;
+font-size: 16px;
+text-align: center;
+font-weight: bold;
+background: #049c2f;
+color: #fff;
+}
+.whatsappchat-body {
+padding: 14px;
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+box-sizing: border-box;
+}
+.whatsappchat-input {
+border: 1px solid #ddd;
+border-radius: 3px;
+font-size: 14px;
+line-height: 32px;
+padding: 0 10px;
+box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+}
+.whatsappchat-input:focus {border: 1px solid green;}
+.whatsappchat-input.setengah {
+width: 48%;
+margin: 1%;
+margin-bottom: 10px;
+}
+.whatsappchat-input.full {
+width: 98%;
+resize: none;
+min-height: 150px;
+margin: 0 1%;
+}
+.whatsappchat-input:focus {border: 1px solid green;}
+a.submit {
+line-height: 24px;
+padding: 10px 15px;
+width: 100%;
+max-width: 220px;
+text-align: center;
+background: #049c2f;
+margin: 14px auto 0 auto;
+display: block;
+color: #fff;
+border-radius: 6px;
+cursor: pointer;
+}
+span.whatsappchat-x {
+position: absolute;
+top: 5px;
+right: 5px;
+height: 30px;
+width: 30px;
+/* background: #222; */
+border: 2px solid #fff;
+border-radius: 50px;
+corsor:pointer;
+}
+a#whatsappchat-icon {
+position: fixed;
+bottom: 20px;
+left: 20px;
+line-height: 0;
+border-radius: 50%;
+background: #2ecc71;
+padding: 0;
+height: 42px;
+width: 42px;
+color: #fff;
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+/* filter: invert(100%); */
+z-index:99999;
+}
+a#whatsappchat-icon::before {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+span.whatsappchat-x::before {
+content: "";
+position: absolute;
+top: 50%;
+left: 50%;
+height: 3px;
+width: 50%;
+background: #fff;
+transform: translate(-50%,-50%);
+}
+@media (max-width: 480px){
+.whatsappchat-input.setengah {
+width: 100%;
+margin: 0;
+margin-bottom: 10px;
+}
+a#whatsappchat-icon {bottom:80px;left:10px;}
+.whatsappchat-input.full {
+width: 100%;
+margin: 0;
+}
+}
+</style>

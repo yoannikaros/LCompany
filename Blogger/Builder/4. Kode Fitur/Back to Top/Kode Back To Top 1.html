@@ -1,0 +1,23 @@
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+<style type='text/css'>
+#myBtn {display: none; position: fixed; bottom: 100px; right: 10px; z-index: 99999; border: none; outline: none; background-color: #229af7;
+    color: white; cursor: pointer;    padding: 10px 14px; border-radius: 50%; font-size: 18px;}
+#myBtn:hover {background-color: #555;}
+@media (max-width: 480px){
+#myBtn { bottom: 80px;}
+}
+</style>
+<script type='text/javascript'>
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>

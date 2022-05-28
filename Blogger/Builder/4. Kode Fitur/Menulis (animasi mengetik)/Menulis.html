@@ -1,0 +1,16 @@
+<!-- AWAL FITUR MENULIS-->
+      <script language="JavaScript">
+        var textas="Fitur Menulis Blogspot Landing Page Builder";
+        var delay=10;var currentChar=1;var destination="[none]";
+        function type(){{var dest=document.getElementById(destination);if (dest)
+        {dest.innerHTML=textas.substr(0, currentChar);currentChar++;
+        if (currentChar>textas.length){
+        currentChar=1;setTimeout("type()", 3000);}else{setTimeout("type()", delay);}}}}
+        function startTyping(textParam, delayParam, destinationParam)
+        {textas=textParam;delay=delayParam;currentChar=1;destination=destinationParam;type();}
+      </script>
+      <span id="textDestination"></span>
+      <script language="JavaScript">
+        javascript:startTyping(textas, 100, "textDestination");
+      </script>
+<!-- AKHIR FITUR MENULIS-->

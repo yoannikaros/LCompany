@@ -1,0 +1,178 @@
+<!-- AWAL NAVBAR MELAYANG MERAH TULISAN-->
+<style type="text/css">
+  .navbar{background:#ec3136;color:#fff;box-shadow:0 0 3px rgba(0,0,0,0.2);-webkit-transition:background .3s ease-out;transition:background .3s ease-out;margin: 0;}
+  .navbar .container{padding:0 0 20px}
+  .navbar-brand img{margin-right:5px;max-width:280px;padding-top:0px;margin-top:-20px}
+  .navbar-brand{display:inline-block;font-size:20px;font-weight:400;color:#ffffff;}
+  .navbar-brand,.navbar-brand:hover,.navbar-brand:active,.navbar-brand:focus{padding-top:10px;font-size:14px;line-height:20px;font-weight:400;color:#fff}
+  .navbar-brand img{display:inline}
+  .navbar-brand span{font-size:36px;font-weight:700}
+  .navbar.scrolled .navbar-brand span{font-size:30px;}
+  .navbar.scrolled {background:#ec3136;box-shadow:0 0 3px rgba(0,0,0,0.2)}
+  .navbar.scrolled .navbar-toggle{color:#fff;border-color:#fff}
+  .navbar.scrolled .navbar-toggle .icon-bar{background:#ec3136}
+  .navbar.scrolled .container{padding:0px 20px 15px 20px}
+  .navbar .nav{padding-top:5px;}
+  .navbar .scrolled .nav{padding-top:10px;}
+  .scrolled .navbar-brand img{margin-right:5px;max-width:230px;padding-top:0px;margin-top:1px}
+  .navbar .nav a,.navbar .nav a:active,.navbar .nav a:focus,.navbar .nav a:hover{padding:0 10px;font-size:18px;line-height:40px;font-weight:400;background:transparent;color:#ffffff;transition:color .2s ease-in;}
+  .navbar .nav a:hover{padding:0 10px;font-size:18px;line-height:40px;font-weight:400; color:#fff;transition:color .2s ease-in;border-bottom:#fff solid 2px}
+  .navbar.scrolled .nav a,.navbar.scrolled .nav a:active,.navbar.scrolled .nav a:hover{color:#ffffff}
+  .navbar.scrolled .nav li.active a,.navbar.scrolled .nav a:hover{color:#fff;}
+  .navbar li{background:transparent;margin:0 5px}
+  .navbar ul .dropdown-menu{background:#ec3136;}
+  .navbar .container{padding:20px;-webkit-transition:padding .5s ease-out;transition:padding .5s ease-out}
+  .renggang{padding-top:120px;padding-bottom:100px;}
+  @media (max-width:991px) {
+  .navbar .nav a,.navbar .nav a:active,.navbar .nav a:hover{font-size:16px}
+  .navbar li{margin:0 5px}
+  .navbar-brand img{margin-left:0;max-width:250px}
+  .scrolled .navbar-brand img{margin-left:0;max-width:220px;padding-top:0px;margin-top:-5px}
+  }
+  @media (max-width:767px) {
+  .navbar {background:#ec3136;box-shadow:0 0 3px rgba(0,0,0,0.2)}
+  .navbar .navbar-toggle{margin-bottom:5px;margin-top:5px;color:#ffffff;border-color:transparent!important}
+  .navbar .navbar-toggle .icon-bar{width:28px;height:4px;margin-top:0;background:#fff!important}
+  .navbar .navbar-toggle .icon-bar + .icon-bar{margin-top:4px}
+  .navbar .container{padding:0px 10px 15px 10px}
+  .navbar .scrolled .container{padding:0px 10px 8px 10px}
+  .navbar .nav a,.navbar .nav a:active,.navbar .nav a:hover{line-height:42px;text-align:left;color:#ffffff}
+  .navbar .nav li.active a,.navbar .nav a:hover{color:#fff}
+  .navbar-brand,.navbar-brand:hover,.navbar-brand:active,.navbar-brand:focus{padding-top:10px;font-size:12px;line-height:17px;font-weight:400;color:#fff}
+  .navbar-brand span{font-size:26px;font-weight:700}
+  .navbar.scrolled .navbar-brand span{font-size:20px;}
+  .navbar .navbar-brand img{padding-left:0;padding-top:15px;max-width:230px}
+  .header .container{margin-top:-80px}
+  .scrolled .navbar-brand img{margin-top:-20px;max-width:230px}
+  .renggang{padding-top:50px;padding-bottom:40px;}
+  }
+</style>
+<script type="text/javascript">
+  //<![CDATA[
+  !function(a){"use strict";var b=[],c={init:function(b){google.maps.visualRefresh=!0;var c=a.extend({deviceWidth:580,markers:[]},b),d={center:"",zoom:"5",size:screen.width+"x480",scale:window.devicePixelRatio?window.devicePixelRatio:1,maptype:"roadmap",sensor:!1},e=a(this);c.imgURI="http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyC78BqGz3RxRwBrvnPAvaVreliBTgKBlgc",c.settings=d,c.settings.center=e.attr("data-center")||c.settings.center,c.settings.zoom=e.attr("data-zoom")||c.settings.zoom,c.settings.maptype=e.attr("data-maptype")||c.settings.maptype,e.data("options",c),e.mobileGmap(screen.width<c.deviceWidth?"showImage":"showMap")},showMap:function(){var b=a(this).addClass("gmap_map"),d=b.data("options"),e=new google.maps.Geocoder,f={},g=b.get(0);e.geocode({address:d.settings.center},function(b,h){if(h===google.maps.GeocoderStatus.OK){f={zoom:parseInt(d.settings.zoom,10),center:b[0].geometry.location,mapTypeId:d.settings.maptype};var i=new google.maps.Map(g,f),j={};if(d.markers.length)for(var k=0;k<d.markers.length;k++)j=a.extend({map:i},d.markers[k]),j.position&&"center"!=j.position||(j.position=b[0].geometry.location),"object"!==typeof j.position?!function(a){e.geocode({address:a.position},function(b,d){d===google.maps.GeocoderStatus.OK&&(a.position=b[0].geometry.location,c._addMarker(a))})}(j):c._addMarker(j)}})},_addMarker:function(a){var c;a.info&&(c=a.info,delete a.info);var d=new google.maps.Marker(a);if(c){var e=new google.maps.InfoWindow({content:c});google.maps.event.addListener(d,"click",function(){e.open(a.map,d)}),a.showInfo&&window.setTimeout(function(){e.open(a.map,d)},100)}b.push(d)},showImage:function(){var b=a(this).addClass("gmap_image"),c=[],d=new Image,e=document.createElement("a"),f=b.data("options"),g=0,h=[];for(var i in f.settings)c.push(i+"="+f.settings[i]);if(f.markers.length)for(var j=[];g<f.markers.length;g++){j=[];for(var k in f.markers[g])j.push("position"==k?f.markers[g][k]&&"center"!=f.markers[g][k]?f.markers[g][k].replace(/ /gi,"+"):f.settings.center:k+":"+f.markers[g][k]);h.push("&markers="+j.join("%7C"))}d.src=f.imgURI+c.join("&")+h.join(""),e.href="//maps.google.com/maps?q="+f.settings.center,e.appendChild(d),a(this).empty().append(e)}};a.fn.mobileGmap=function(b){return c[b]?c[b].apply(this,Array.prototype.slice.call(arguments,1)):"object"!==typeof b&&b?void a.error("Method "+b+" does not exist on jQuery.mobileGmap"):c.init.apply(this,arguments)}}(this.jQuery);$(function(){"use strict";eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(".t").6($(7).6()+9),$(7).R(3(){$(".S-T").A(B,3(){$(".U").j(3(){k a=$(5).C(\'l-D\');$(5).V({W:[{X:"D",Y:a,Z:!0}]})})})}),$(7).11(3(){$(".t").6($(7).6()+9)}),$(7).e()>$(7).6()+9?$(".m").12():$(".m").13(),$(7).e()<$(7).6()-9?$(".f").u("q"):$(".f").n("q"),$(7).14(3(){k a=$(5).e(),b=$(7).6(),c=1.2-a/(10*b);$(".m 15").g({E:"F("+c+")","-16-E":"F("+c+")"}),$(".t .17").g({v:1.4-a/18}),$(7).e()>$(7).6()+9?$(".m").A():$(".m").19(),$(7).e()<$(7).6()-9?$(".f").u("q"):$(".f").n("q")}),$(".1a").G(3(a){$("o,1b").1c({e:$($.C(5,"H")).w().1d-1e},B),a.1f(),$(".f-x").1g("r")&&$(".f-x").u("r").n("x")}),$(".h-y").j(3(){k a=$(5).i(".I").l("I");$(5).l("6",a)}),$(".J .h-y").j(3(){$(5).g({6:$(5).l("6")+"%"})}),$(".J .h-K").g({v:1}),$(".h").z(3(){$(".h-y").j(3(){$(5).g({6:$(5).l("6")+"%"})}),$(".h-K").g({v:1})},{w:"1h%"}),$(".L").z(3(){$(5.M).n("r")},{w:"1i%"}),$(".1j.8-p,.1k.8-p").j(3(){k a=$(5),b=$(".8-N.1l");a.i("#8-p-1m-s,#1n-s").1o(),a.1p("G","a.8-p-O-s",3(){1q $.1r(5.H,{},3(c){k d=$($(c).i(".1s").1t?c:"<P></P>");b.o(d.i(".8-N").o()),b.i(".L").z(3(){$(5.M).n("r")}),a.o(d.i("#8-p-O-s").1u())},"o"),$(5).1v("<Q>1w...</Q>"),!1})})',62,95,'|||function||this|height|window|blog|50|||||scrollTop|navbar|css|skills|find|each|var|data|backstretch|addClass|html|pager|scrolled|in|link|header|removeClass|opacity|offset|collapse|item|waypoint|fadeOut|500|attr|center|transform|scale|click|href|percent|touch|bars|scrollimation|element|posts|older|div|span|load|page|loader|gmap|mobileGmap|markers|position|info|showInfo||resize|hide|show|scroll|img|webkit|container|400|fadeIn|scrollto|body|animate|top|75|preventDefault|hasClass|40|90|index|archive|hfeed|newer|home|remove|on|return|get|post|length|clone|replaceWith|Loading'.split('|'),0,{})),$.backstretch($("div[data-header]").attr("data-header")),$("img").addClass("img-responsive")});
+  //]]>
+</script>
+<!-- Fixed Navbar -->
+<nav class="navbar navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class='navbar-brand scrollto' href='/'><span class="tebal">BARAND ANDA</span><br/>Deskripsi Singkat Saja</a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="/">Beranda</a></li>
+        <li class="dropdown">
+          <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Drop Down<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a class="kecil" href="#">Child Menu 1</a></li>
+            <li><a class="kecil" href="#">Child Menu 2</a></li>
+            <li><a class="kecil" href="#">Child Menu 3</a></li>
+            <li><a class="kecil" href="#">Child Menu 4</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Menu</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- AKHIR NAVBAR MELAYANG MERAH TULISAN-->
+
+
+
+
+
+
+
+
+
+
+<!-- AWAL NAVBAR MELAYANG MERAH GAMBAR-->
+<style type="text/css">
+  .navbar{background:#ec3136;color:#fff;box-shadow:0 0 3px rgba(0,0,0,0.2);-webkit-transition:background .3s ease-out;transition:background .3s ease-out;margin: 0;}
+  .navbar .container{padding:0 0 20px}
+  .navbar-brand img{margin-right:5px;max-width:280px;padding-top:0px;margin-top:-20px}
+  .navbar-brand{display:inline-block;font-size:20px;font-weight:400;color:#ffffff;}
+  .navbar-brand,.navbar-brand:hover,.navbar-brand:active,.navbar-brand:focus{padding-top:10px;font-size:14px;line-height:20px;font-weight:400;color:#fff}
+  .navbar-brand img{display:inline}
+  .navbar-brand span{font-size:36px;font-weight:700}
+  .navbar.scrolled .navbar-brand span{font-size:30px;}
+  .navbar.scrolled {background:#ec3136;box-shadow:0 0 3px rgba(0,0,0,0.2)}
+  .navbar.scrolled .navbar-toggle{color:#fff;border-color:#fff}
+  .navbar.scrolled .navbar-toggle .icon-bar{background:#ec3136}
+  .navbar.scrolled .container{padding:0px 20px 15px 20px}
+  .navbar .nav{padding-top:5px;}
+  .navbar .scrolled .nav{padding-top:10px;}
+  .scrolled .navbar-brand img{margin-right:5px;max-width:230px;padding-top:0px;margin-top:1px}
+  .navbar .nav a,.navbar .nav a:active,.navbar .nav a:focus,.navbar .nav a:hover{padding:0 10px;font-size:18px;line-height:40px;font-weight:400;background:transparent;color:#ffffff;transition:color .2s ease-in;}
+  .navbar .nav a:hover{padding:0 10px;font-size:18px;line-height:40px;font-weight:400; color:#fff;transition:color .2s ease-in;border-bottom:#fff solid 2px}
+  .navbar.scrolled .nav a,.navbar.scrolled .nav a:active,.navbar.scrolled .nav a:hover{color:#ffffff}
+  .navbar.scrolled .nav li.active a,.navbar.scrolled .nav a:hover{color:#fff;}
+  .navbar li{background:transparent;margin:0 5px}
+  .navbar ul .dropdown-menu{background:#ec3136;}
+  .navbar .container{padding:20px;-webkit-transition:padding .5s ease-out;transition:padding .5s ease-out}
+  .renggang{padding-top:120px;padding-bottom:100px;}
+  @media (max-width:991px) {
+  .navbar .nav a,.navbar .nav a:active,.navbar .nav a:hover{font-size:16px}
+  .navbar li{margin:0 5px}
+  .navbar-brand img{margin-left:0;max-width:250px}
+  .scrolled .navbar-brand img{margin-left:0;max-width:220px;padding-top:0px;margin-top:-5px}
+  }
+  @media (max-width:767px) {
+  .navbar {background:#ec3136;box-shadow:0 0 3px rgba(0,0,0,0.2)}
+  .navbar .navbar-toggle{margin-bottom:5px;margin-top:5px;color:#ffffff;border-color:transparent!important}
+  .navbar .navbar-toggle .icon-bar{width:28px;height:4px;margin-top:0;background:#fff!important}
+  .navbar .navbar-toggle .icon-bar + .icon-bar{margin-top:4px}
+  .navbar .container{padding:0px 10px 15px 10px}
+  .navbar .scrolled .container{padding:0px 10px 8px 10px}
+  .navbar .nav a,.navbar .nav a:active,.navbar .nav a:hover{line-height:42px;text-align:left;color:#ffffff}
+  .navbar .nav li.active a,.navbar .nav a:hover{color:#fff}
+  .navbar-brand,.navbar-brand:hover,.navbar-brand:active,.navbar-brand:focus{padding-top:10px;font-size:12px;line-height:17px;font-weight:400;color:#fff}
+  .navbar-brand span{font-size:26px;font-weight:700}
+  .navbar.scrolled .navbar-brand span{font-size:20px;}
+  .navbar .navbar-brand img{padding-left:0;padding-top:15px;max-width:230px}
+  .header .container{margin-top:-80px}
+  .scrolled .navbar-brand img{margin-top:-20px;max-width:230px}
+  .renggang{padding-top:50px;padding-bottom:40px;}
+  }
+</style>
+<script type="text/javascript">
+  //<![CDATA[
+  !function(a){"use strict";var b=[],c={init:function(b){google.maps.visualRefresh=!0;var c=a.extend({deviceWidth:580,markers:[]},b),d={center:"",zoom:"5",size:screen.width+"x480",scale:window.devicePixelRatio?window.devicePixelRatio:1,maptype:"roadmap",sensor:!1},e=a(this);c.imgURI="http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyC78BqGz3RxRwBrvnPAvaVreliBTgKBlgc",c.settings=d,c.settings.center=e.attr("data-center")||c.settings.center,c.settings.zoom=e.attr("data-zoom")||c.settings.zoom,c.settings.maptype=e.attr("data-maptype")||c.settings.maptype,e.data("options",c),e.mobileGmap(screen.width<c.deviceWidth?"showImage":"showMap")},showMap:function(){var b=a(this).addClass("gmap_map"),d=b.data("options"),e=new google.maps.Geocoder,f={},g=b.get(0);e.geocode({address:d.settings.center},function(b,h){if(h===google.maps.GeocoderStatus.OK){f={zoom:parseInt(d.settings.zoom,10),center:b[0].geometry.location,mapTypeId:d.settings.maptype};var i=new google.maps.Map(g,f),j={};if(d.markers.length)for(var k=0;k<d.markers.length;k++)j=a.extend({map:i},d.markers[k]),j.position&&"center"!=j.position||(j.position=b[0].geometry.location),"object"!==typeof j.position?!function(a){e.geocode({address:a.position},function(b,d){d===google.maps.GeocoderStatus.OK&&(a.position=b[0].geometry.location,c._addMarker(a))})}(j):c._addMarker(j)}})},_addMarker:function(a){var c;a.info&&(c=a.info,delete a.info);var d=new google.maps.Marker(a);if(c){var e=new google.maps.InfoWindow({content:c});google.maps.event.addListener(d,"click",function(){e.open(a.map,d)}),a.showInfo&&window.setTimeout(function(){e.open(a.map,d)},100)}b.push(d)},showImage:function(){var b=a(this).addClass("gmap_image"),c=[],d=new Image,e=document.createElement("a"),f=b.data("options"),g=0,h=[];for(var i in f.settings)c.push(i+"="+f.settings[i]);if(f.markers.length)for(var j=[];g<f.markers.length;g++){j=[];for(var k in f.markers[g])j.push("position"==k?f.markers[g][k]&&"center"!=f.markers[g][k]?f.markers[g][k].replace(/ /gi,"+"):f.settings.center:k+":"+f.markers[g][k]);h.push("&markers="+j.join("%7C"))}d.src=f.imgURI+c.join("&")+h.join(""),e.href="//maps.google.com/maps?q="+f.settings.center,e.appendChild(d),a(this).empty().append(e)}};a.fn.mobileGmap=function(b){return c[b]?c[b].apply(this,Array.prototype.slice.call(arguments,1)):"object"!==typeof b&&b?void a.error("Method "+b+" does not exist on jQuery.mobileGmap"):c.init.apply(this,arguments)}}(this.jQuery);$(function(){"use strict";eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(".t").6($(7).6()+9),$(7).R(3(){$(".S-T").A(B,3(){$(".U").j(3(){k a=$(5).C(\'l-D\');$(5).V({W:[{X:"D",Y:a,Z:!0}]})})})}),$(7).11(3(){$(".t").6($(7).6()+9)}),$(7).e()>$(7).6()+9?$(".m").12():$(".m").13(),$(7).e()<$(7).6()-9?$(".f").u("q"):$(".f").n("q"),$(7).14(3(){k a=$(5).e(),b=$(7).6(),c=1.2-a/(10*b);$(".m 15").g({E:"F("+c+")","-16-E":"F("+c+")"}),$(".t .17").g({v:1.4-a/18}),$(7).e()>$(7).6()+9?$(".m").A():$(".m").19(),$(7).e()<$(7).6()-9?$(".f").u("q"):$(".f").n("q")}),$(".1a").G(3(a){$("o,1b").1c({e:$($.C(5,"H")).w().1d-1e},B),a.1f(),$(".f-x").1g("r")&&$(".f-x").u("r").n("x")}),$(".h-y").j(3(){k a=$(5).i(".I").l("I");$(5).l("6",a)}),$(".J .h-y").j(3(){$(5).g({6:$(5).l("6")+"%"})}),$(".J .h-K").g({v:1}),$(".h").z(3(){$(".h-y").j(3(){$(5).g({6:$(5).l("6")+"%"})}),$(".h-K").g({v:1})},{w:"1h%"}),$(".L").z(3(){$(5.M).n("r")},{w:"1i%"}),$(".1j.8-p,.1k.8-p").j(3(){k a=$(5),b=$(".8-N.1l");a.i("#8-p-1m-s,#1n-s").1o(),a.1p("G","a.8-p-O-s",3(){1q $.1r(5.H,{},3(c){k d=$($(c).i(".1s").1t?c:"<P></P>");b.o(d.i(".8-N").o()),b.i(".L").z(3(){$(5.M).n("r")}),a.o(d.i("#8-p-O-s").1u())},"o"),$(5).1v("<Q>1w...</Q>"),!1})})',62,95,'|||function||this|height|window|blog|50|||||scrollTop|navbar|css|skills|find|each|var|data|backstretch|addClass|html|pager|scrolled|in|link|header|removeClass|opacity|offset|collapse|item|waypoint|fadeOut|500|attr|center|transform|scale|click|href|percent|touch|bars|scrollimation|element|posts|older|div|span|load|page|loader|gmap|mobileGmap|markers|position|info|showInfo||resize|hide|show|scroll|img|webkit|container|400|fadeIn|scrollto|body|animate|top|75|preventDefault|hasClass|40|90|index|archive|hfeed|newer|home|remove|on|return|get|post|length|clone|replaceWith|Loading'.split('|'),0,{})),$.backstretch($("div[data-header]").attr("data-header")),$("img").addClass("img-responsive")});
+  //]]>
+</script>
+<!-- Fixed Navbar -->
+<nav class="navbar navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+<a class='navbar-brand scrollto' href='/'><img alt="KEYWORD DI SINI" src='https://1.bp.blogspot.com/--KdXEY6UfLw/XBsauiP1LaI/AAAAAAAAB4w/_D-q8kBZwpQ3VKrQtk-Alj4V8UqUlTxzwCLcBGAs/s1600/logo.png'/></a>
+	</div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="/">Beranda</a></li>
+        <li class="dropdown">
+          <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Drop Down<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a class="kecil" href="#">Child Menu 1</a></li>
+            <li><a class="kecil" href="#">Child Menu 2</a></li>
+            <li><a class="kecil" href="#">Child Menu 3</a></li>
+            <li><a class="kecil" href="#">Child Menu 4</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Menu</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- AKHIR NAVBAR MELAYANG MERAH GAMBAR-->

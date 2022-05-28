@@ -1,0 +1,68 @@
+<!-- AWAL SLIDE IMAGE -->
+  <div class="latar-putih tengah">
+   <div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="2500">
+    <div class="carousel-inner">
+
+     <div class="item active">
+      <div class="carousel-col">
+       <div class="block img-responsive">
+       <img alt="Blogspot Landing Page Builder" src="https://2.bp.blogspot.com/-tUBKDTJY4kc/Wo4le9Tv9kI/AAAAAAAAAAg/thnUiN6-Jqo6EFlBQZV_rWbI3kfOOGS9ACLcBGAs/s1600/bg-header.jpg"/>
+       </div>
+      </div>
+     </div>
+
+     <div class="item">
+      <div class="carousel-col">
+       <div class="block img-responsive">
+        <img alt="Blogspot Landing Page Builder" src="https://2.bp.blogspot.com/-tUBKDTJY4kc/Wo4le9Tv9kI/AAAAAAAAAAg/thnUiN6-Jqo6EFlBQZV_rWbI3kfOOGS9ACLcBGAs/s1600/bg-header.jpg"/>
+       </div>
+      </div>
+     </div>
+   
+   </div>
+  </div>
+</div>
+
+<style>
+.carousel-col { 
+    position: relative; 
+    min-height: 1px; 
+    padding: 0; 
+    float: center;
+ }
+ .active > div { display:none; }
+ .active > div:first-child { display:block; }
+
+</style>
+
+<script type='text/javascript'>
+$('.carousel[data-type="multi"] .item').each(function() {
+ var next = $(this).next();
+ if (!next.length) {
+  next = $(this).siblings(':first');
+ }
+ next.children(':first-child').clone().appendTo($(this));
+
+ for (var i = 0; i < 2; i++) {
+  next = next.next();
+  if (!next.length) {
+   next = $(this).siblings(':first');
+  }
+
+  next.children(':first-child').clone().appendTo($(this));
+ }
+});
+</script>
+<!-- AKHIR SLIDE IMAGE -->
+
+
+KETERANGAN:
+UNTUK MENAMBAH ATAU MENURANGI GAMBAR. SILAHKAN DUPLIKAT ATAU HAPUS SALAH SATU KODE YANG SEPERTI INI
+
+     <div class="item">
+      <div class="carousel-col">
+       <div class="block img-responsive">
+        <img alt="Blogspot Landing Page Builder" src="https://2.bp.blogspot.com/-tUBKDTJY4kc/Wo4le9Tv9kI/AAAAAAAAAAg/thnUiN6-Jqo6EFlBQZV_rWbI3kfOOGS9ACLcBGAs/s1600/bg-header.jpg"/>
+       </div>
+      </div>
+     </div>

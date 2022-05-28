@@ -1,0 +1,98 @@
+<!-- AWAL POPUP -->
+<div class="footerfixed wa">
+<div class="box teks-kiri">
+<a class="btn-chat btn-hijau animated infinite rubberBand" title="Hubungi Kami Via WhatsApp" href="#popupchat"><i aria-hidden='true' class='fa fa-whatsapp besar'></i></a>
+</div>
+</div>
+
+<div id="popupchat">
+<div class="headerfixed">
+ <div class="popupchat-container">
+ <div id='chatwhatsapp'>
+<p class='judul-form'>Chat with us</p>
+<div class='body-form kecil'>
+<input class='nomorwa' type='hidden' value='082328785284'/>
+<input class='nama form-input setengah' placeholder='Nama Anda..' type='text'/>
+<input class='email form-input setengah' placeholder='Alamat E-mail..' type='email'/>
+<textarea class='pesan form-input fullwidth2' placeholder='Pesan tambahan'></textarea>
+<a class='submit normal'><i aria-hidden="true" class="fa fa-whatsapp"></i> <b>Chat Now</b></a>
+</div>
+</div>
+ <a class="popupchat-close" href="#close">X</a>
+</div>
+</div>
+</div>
+<!-- AKHIR POPUP -->
+
+<script type='text/javascript'>
+$('#chatwhatsapp .submit').click(chatwhatsapp);
+var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+function chatwhatsapp() {
+    var ph = '';
+    if ($('#chatwhatsapp .nama').val() == '') {
+        ph = $('#chatwhatsapp .nama').attr('placeholder');
+        alert('Silahkan tulis ' + ph);
+        $('#chatwhatsapp .nama').focus();
+        return false;
+    } else if ($('#chatwhatsapp .email').val() == '') {
+        ph = $('#chatwhatsapp .email').attr('placeholder');
+        alert(ph + ' Harus Diisi');
+        $('#chatwhatsapp .email').focus();
+        return false;
+    } else if ($('#chatwhatsapp .pesan').val() == '') {
+        ph = $('#chatwhatsapp .pesan').attr('placeholder');
+        alert('tuliskan ' + ph);
+        $('#chatwhatsapp .pesan').focus();
+        return false;
+    } else {
+        if (!confirm("Sudah menginstall WhatsApp?")) {
+            window.open("https://www.whatsapp.com/download/");
+        } else {
+            // Check Device (Mobile/Desktop)
+            var url_wa = 'https://web.whatsapp.com/send';
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                url_wa = 'whatsapp://send/';
+            }
+            // Get Value
+            var nomorwa = $('#chatwhatsapp .nomorwa').val(),
+                    via_url = location.href,
+                    nama = $('#chatwhatsapp .nama').val(),
+                    email = $('#chatwhatsapp .email').val(),
+                    pesan = $('#chatwhatsapp .pesan').val();
+            $(this).attr('href', url_wa + '?phone=62 ' + nomorwa + '&text=Halo, saya *' + nama + '*%0A(' + email + ') %0A%0A' + pesan + '%0A%0Avia ' + via_url);
+
+            var w = 960,
+                    h = 540,
+                    left = Number((screen.width / 2) - (w / 2)),
+                    tops = Number((screen.height / 2) - (h / 2)),
+                    popupWindow = window.open(this.href, '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=1, copyhistory=no, width=' + w + ', height=' + h + ', top=' + tops + ', left=' + left);
+            popupWindow.focus();
+            return false;
+        }
+    }
+}
+</script>
+
+<style>
+a.popupchat-link {padding:17px 0;text-align: center;margin:7% auto;position: relative;width: 300px;color: #fff;text-decoration: none;background-color: #FFBA00;border-radius: 3px;box-shadow: 0 5px 0px 0px #eea900;display: block;}
+a.popupchat-link:hover {background-color: #ff9900;box-shadow: 0 3px 0px 0px #eea900;-webkit-transition:all 1s;-moz-transition:all 1s;transition:all 1s;}
+#popupchat {visibility: hidden;opacity: 0;}
+#popupchat:target {visibility:visible;opacity: 1;background-color: rgba(0,0,0,0.8); position: fixed;top:0; left:0;right:0;bottom:0;margin:0;z-index: 99999999999;-webkit-transition:all 1s;-moz-transition:all 1s; transition:all 1s;}
+.popupchat-container {width:480px; position: relative; margin:7% auto; padding:20px 20px; background-color: #fafafa; color:#333; border-radius: 6px;}
+a.popupchat-close {position: absolute; top:3px; right:3px; background-color: #333; opacity:0.5; padding:7px 10px; font-size: 20px; text-decoration: none; line-height: 1; color:#fff; border-radius: 5px}
+.btn-chat {font-size:18px;margin:3px;border: none;color: white!important;padding: 8px 15px;cursor: pointer;display:inline-block;  -webkit-transition-duration: 0.4s; transition-duration: 0.4s;border-radius:50px!important;}
+.btn-chat:hover {background-color: #ffffff; color: #00cc33!important;}
+.btn3 {font-size:18px;margin:3px;padding: 10px 20px;cursor: pointer;display:inline-block; border-radius:6px;background-color: transparent}
+p.judul-form {margin: 0;padding: 15px;font-size: 22px;text-align: center;font-weight: bold;background: #2ecc71;color: #fff;}
+.body-form {padding: 14px;display: flex;flex-wrap: wrap;width: 100%;box-sizing: border-box;}
+.form-input {border: 1px solid #ddd;border-radius: 3px;line-height: 32px;padding: 0 10px;box-shadow: inset 0 0 2px rgba(0,0,0,0.1);}
+.form-input.setengah {width: 48%;margin: 1%;margin-bottom: 10px;}
+.form-input.fullwidth {width: 98%;resize: none;min-height: 40px;margin: 1%;}
+.form-input.fullwidth2 {width: 98%;resize: none;min-height: 150px;margin: 1%;}
+.form-input:focus {border: 1px solid green;}
+a.submit {line-height: 24px;padding: 10px 15px;width: 100%;max-width: 200px;text-align: center;background: #049c2f;margin: 14px auto 0 auto;display: block;color: #fff;border-radius: 3px;cursor: pointer;}
+a:hover.submit {background: green;}
+@media (max-width: 480px)
+{.form-input.setengah {width: 100%;margin: 0;margin-bottom: 10px;}.form-input.fullwidth2,.form-input.fullwidth {width: 100%;margin: 0;margin-bottom: 10px;}.popupchat-container {width:300px;padding:10px 10px;}
+.wa{bottom:60px;}}
+</style>

@@ -1,0 +1,114 @@
+<!-- AWAL COLLAPSE FAQ -->
+<div class='fitur oke' id='faq'>
+	<div class='konten'>
+		<h2 class="tengah birumuda"><b>FAQs</b><br/><span class="normal hitam">( Frequently Asked Questions &#8211; Pertanyaan Yang Sering Diajukan  )</span></h2>
+	</div>
+	<div class='konten'>
+		<div class="panel-group" id="accordion">
+
+			<div class="panel panel-default wow animated fadeInLeft">
+				<div class="panel-heading">
+					<p class="panel-title tebal">
+						<a data-toggle="collapse" data-parent="#accordion" href="#faq1">
+						<span class="glyphicon glyphicon-plus"></span>
+						 Pertanyaan anda di sini
+						</a>
+					</p>
+				</div>
+				<div id="faq1" class="panel-collapse collapse">
+					<div class="panel-body kecil">
+						<p>Jawaban anda di sini Jawaban anda di sini Jawaban anda di sini</p>
+						<p>Jawaban anda di sini Jawaban anda di sini Jawaban anda di sini</p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default wow animated fadeInLeft">
+				<div class="panel-heading">
+					<p class="panel-title tebal">
+						<a data-toggle="collapse" data-parent="#accordion" href="#faq2">
+						<span class="glyphicon glyphicon-plus"></span>
+						 Pertanyaan anda di sini
+						</a>
+					</p>
+				</div>
+				<div id="faq2" class="panel-collapse collapse">
+					<div class="panel-body kecil">
+						<p>Jawaban anda di sini Jawaban anda di sini Jawaban anda di sini</p>
+						<p>Jawaban anda di sini Jawaban anda di sini Jawaban anda di sini</p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default wow animated fadeInLeft">
+				<div class="panel-heading">
+					<p class="panel-title tebal">
+						<a data-toggle="collapse" data-parent="#accordion" href="#faq3">
+						<span class="glyphicon glyphicon-plus"></span>
+						 Pertanyaan anda di sini
+						</a>
+					</p>
+				</div>
+				<div id="faq3" class="panel-collapse collapse">
+					<div class="panel-body kecil">
+						<p>Jawaban anda di sini Jawaban anda di sini Jawaban anda di sini</p>
+						<p>Jawaban anda di sini Jawaban anda di sini Jawaban anda di sini</p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default wow animated fadeInLeft">
+				<div class="panel-heading">
+					<p class="panel-title tebal">
+						<a data-toggle="collapse" data-parent="#accordion" href="#faq4">
+						<span class="glyphicon glyphicon-plus"></span>
+						 Pertanyaan anda di sini
+						</a>
+					</p>
+				</div>
+				<div id="faq4" class="panel-collapse collapse">
+					<div class="panel-body kecil">
+						<p>Jawaban anda di sini Jawaban anda di sini Jawaban anda di sini</p>
+						<p>Jawaban anda di sini Jawaban anda di sini Jawaban anda di sini</p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default wow animated fadeInLeft">
+				<div class="panel-heading">
+					<p class="panel-title tebal">
+						<a data-toggle="collapse" data-parent="#accordion" href="#faq5">
+						<span class="glyphicon glyphicon-plus"></span>
+						 Pertanyaan anda di sini
+						</a>
+					</p>
+				</div>
+				<div id="faq5" class="panel-collapse collapse">
+					<div class="panel-body kecil">
+						<p>Jawaban anda di sini Jawaban anda di sini Jawaban anda di sini</p>
+						<p>Jawaban anda di sini Jawaban anda di sini Jawaban anda di sini</p>
+					</div>
+				</div>
+			</div>
+
+</div>
+</div>
+</div>
+
+<style>
+.panel-heading {background:#ffffff!important;color:#21b6fc!important;padding:15px;}
+.panel-body {background:#fff;color:#333333;}
+</style>
+
+<script>
+    $(document).ready(function(){
+        // Add minus icon for collapse element which is open by default
+        $(".collapse.in").each(function(){
+         $(this).siblings(".panel-heading").find(".glyphicon").addClass("glyphicon-minus").removeClass("glyphicon-plus");
+        });
+        
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function(){
+         $(this).parent().find(".glyphicon").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+        }).on('hide.bs.collapse', function(){
+         $(this).parent().find(".glyphicon").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+        });
+    });
+</script>
+<!-- AKHIR COLLAPSE FAQ -->

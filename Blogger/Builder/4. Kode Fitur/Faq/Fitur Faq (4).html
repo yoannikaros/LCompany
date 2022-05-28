@@ -1,0 +1,106 @@
+<!-- AWAL COLLAPSE FAQ -->
+<!-- HTML -->
+<div class='fitur oke' id='faq'>
+<div class='konten'>
+
+<center>
+<h2 class="tebal">F.A.Q</h2>
+Pertanyaan yang sering diajukan
+</center>
+<br/>
+
+<div class="panel-group" id="accordion">
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title tebal">
+<a data-toggle="collapse" data-parent="#accordion" href="#faq1">
+<span class="glyphicon glyphicon-plus"></span>
+Pertanyaan?
+</a>
+</p>
+</div>
+<div id="faq1" class="panel-collapse collapse"><div class="panel-body">
+<p>Jawaban</p>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title tebal">
+<a data-toggle="collapse" data-parent="#accordion" href="#faq2">
+<span class="glyphicon glyphicon-plus"></span>
+Pertanyaan?
+</a>
+</p>
+</div>
+<div id="faq2" class="panel-collapse collapse"><div class="panel-body">
+<p>Jawaban</p>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title tebal">
+<a data-toggle="collapse" data-parent="#accordion" href="#faq3">
+<span class="glyphicon glyphicon-plus"></span>
+Pertanyaan?
+</a>
+</p>
+</div>
+<div id="faq3" class="panel-collapse collapse"><div class="panel-body">
+<p>Jawaban</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- css -->
+<style>
+.panel-heading {background:#049c2f!important;color:#ffffff!important;}
+.panel-body {background:#eaeaea;color:#333333;font-size:16px}
+</style>
+
+<!-- js -->
+<script>
+    $(document).ready(function(){
+        // Add minus icon for collapse element which is open by default
+        $(".collapse.in").each(function(){
+         $(this).siblings(".panel-heading").find(".glyphicon").addClass("glyphicon-minus").removeClass("glyphicon-plus");
+        });
+        
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function(){
+         $(this).parent().find(".glyphicon").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+        }).on('hide.bs.collapse', function(){
+         $(this).parent().find(".glyphicon").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+        });
+    });
+</script>
+<!-- AKHIR COLLAPSE FAQ -->
+
+
+
+
+Keterangan:
+untuk menambah atau mengurangi jumlah pertanyaan dan jawaban, maka kamu cukup menambah (copy paste) atau menghapus kode yang ini.
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title tebal">
+<a data-toggle="collapse" data-parent="#accordion" href="#faq1">
+<span class="glyphicon glyphicon-plus"></span>
+Pertanyaan?
+</a>
+</p>
+</div>
+<div id="faq1" class="panel-collapse collapse"><div class="panel-body">
+<p>Jawaban</p>
+</div>
+</div>
+</div>

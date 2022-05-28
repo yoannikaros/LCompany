@@ -1,0 +1,169 @@
+<!-- AWAL MULTIPLE CAROUSEL IMAGE -->
+<div class="fitur oke">
+   <div class="konten headline">
+  <h2 class="tebal">Fitur Multiple Images Responsive Carousel</h2>
+ </div>
+  
+<div class="konten tengah">
+   <div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="2500">
+    <div class="carousel-inner">
+	
+     <div class="item active">
+      <div class="carousel-col">
+       <div class="block img-responsive">
+<img src="https://3.bp.blogspot.com/-AYqGXX7vp78/Wo-ug7EHjDI/AAAAAAAAAD0/sMAQAq4ajloK1kMFhiWSoJVnoEhcLlHvwCLcBGAs/s1600/preview.png"/>
+</div>
+      </div>
+     </div>
+	 	 
+     <div class="item">
+      <div class="carousel-col">
+       <div class="block img-responsive">
+<img src="https://2.bp.blogspot.com/-vvH_gGh5CK8/Wo_HFuc1TMI/AAAAAAAAAFE/gQosgYIa2HkuvwDBb_SVU6JyBxatRGEOgCLcBGAs/s1600/preview.png"/>
+</div>
+      </div>
+     </div>
+	 
+     <div class="item">
+      <div class="carousel-col">
+       <div class="block img-responsive">
+<img src="https://2.bp.blogspot.com/-y0qL99aaUXQ/W3ToSwm3wxI/AAAAAAAAA9Q/D7vB183iu6gPukeaPgpiC0JEkknrEMyLACLcBGAs/s1600/preview.jpg"/>
+</div>
+      </div>
+     </div>
+	 
+     <div class="item">
+      <div class="carousel-col">
+       <div class="block img-responsive">
+<img src="https://3.bp.blogspot.com/-nv7Wiy89S5M/XADt8WoCGOI/AAAAAAAABww/FiIs8eRaunkY2WiPUZeuwgaHk3i0DTT0gCLcBGAs/s1600/preview.jpg"/>
+</div>
+      </div>
+     </div>
+	 
+    </div>
+
+    <!-- Controls -->
+    <div class="left carousel-control">
+     <a href="#carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+     </a>
+    </div>
+    <div class="right carousel-control">
+     <a href="#carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+     </a>
+    </div>
+   </div>
+</div>
+</div>
+
+<style>
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.carousel-control { 
+    width: 8%;
+    width: 0px;
+}
+.carousel-control.left,
+.carousel-control.right { 
+    margin-right: 40px;
+    margin-left: 32px; 
+    background-image: none;
+    opacity: 1;
+}
+.carousel-control > a > span {
+    color: white;
+   font-size: 29px !important;
+}
+
+.carousel-col { 
+    position: relative; 
+    min-height: 1px; 
+    padding: 5px; 
+    float: left;
+ }
+ .active > div { display:none; }
+ .active > div:first-child { display:block; }
+
+/*xs*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .carousel-inner .active.left { left: -50%; }
+  .carousel-inner .active.right { left: 50%; }
+ .carousel-inner .next        { left:  50%; }
+ .carousel-inner .prev       { left: -50%; }
+  .carousel-col                { width: 50%; }
+ .active > div:first-child + div { display:block; }
+}
+
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-inner .active.left { left: -50%; }
+  .carousel-inner .active.right { left: 50%; }
+ .carousel-inner .next        { left:  50%; }
+ .carousel-inner .prev       { left: -50%; }
+  .carousel-col                { width: 50%; }
+ .active > div:first-child + div { display:block; }
+}
+
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .carousel-inner .active.left { left: -33%; }
+  .carousel-inner .active.right { left: 33%; }
+ .carousel-inner .next        { left:  33%; }
+ .carousel-inner .prev       { left: -33%; }
+  .carousel-col                { width: 33%; }
+ .active > div:first-child + div { display:block; }
+  .active > div:first-child + div + div { display:block; }
+}
+
+/*lg*/
+@media (min-width: 1200px) {
+  .carousel-inner .active.left { left: -25%; }
+  .carousel-inner .active.right{ left:  25%; }
+ .carousel-inner .next        { left:  25%; }
+ .carousel-inner .prev       { left: -25%; }
+  .carousel-col                { width: 25%; }
+ .active > div:first-child + div { display:block; }
+  .active > div:first-child + div + div { display:block; }
+ .active > div:first-child + div + div + div { display:block; }
+}
+
+</style>
+
+<script>
+$('.carousel[data-type="multi"] .item').each(function() {
+ var next = $(this).next();
+ if (!next.length) {
+  next = $(this).siblings(':first');
+ }
+ next.children(':first-child').clone().appendTo($(this));
+
+ for (var i = 0; i < 2; i++) {
+  next = next.next();
+  if (!next.length) {
+   next = $(this).siblings(':first');
+  }
+
+  next.children(':first-child').clone().appendTo($(this));
+ }
+});
+</script>
+<!-- AKHIR MULTIPLE CAROUSEL IMAGE -->
+
+
+KETERANGAN:
+UNTUK MENAMBAH ATAU MENURANGI GAMBAR. SILAHKAN DUPLIKAT ATAU HAPUS SALAH SATU KODE YANG SEPERTI INI
+
+
+     <div class="item">
+      <div class="carousel-col">
+       <div class="block img-responsive">
+<img src="https://2.bp.blogspot.com/-vvH_gGh5CK8/Wo_HFuc1TMI/AAAAAAAAAFE/gQosgYIa2HkuvwDBb_SVU6JyBxatRGEOgCLcBGAs/s1600/preview.png"/>
+</div>
+      </div>
+     </div>

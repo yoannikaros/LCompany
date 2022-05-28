@@ -1,0 +1,27 @@
+<!-- AWAL COUNTDOWN BERULANG 1-->
+<div id="countdownb">
+<span id="countdownb">Count...</span>
+</div>
+
+<style scoped="scoped" type="text/css">
+#countdownb {color:red;font-family:Arial, Sans-serif;font-size:20px;text-transform:uppercase;text-align:center;padding:0px 0;font-weight:bolder;}
+.teks {color:black}
+</style>
+
+<script> 
+var deadline = Date.parse(new Date()) + 36000; 
+var x = setInterval(function() { 
+var now = new Date().getTime(); 
+var t = deadline - now; 
+var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+var seconds = Math.floor((t % (1000 * 60)) / 1000); 
+document.getElementById("countdownb").innerHTML = "<center><h2><strong>" + hours + " : " + minutes + " : " + seconds + "</strong></h2></center>"; 
+    if (t < 0) { 
+        clearInterval(x); 
+        document.getElementById("countdownb").innerHTML = "WAKTU DISCOUNT HABIS"; 
+    } 
+}, 1000); 
+</script>
+<!-- AKHIR COUNTDOWN BERULANG 1-->
